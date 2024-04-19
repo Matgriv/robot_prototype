@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://b66wonmp82l04"]
+
+[ext_resource type="PackedScene" uid="uid://cemp8g4nsfclf" path="res://ProtoRobot/spider_bot.tscn" id="1_rlcnb"]
+
+[sub_resource type="Environment" id="Environment_qlc22"]
+background_mode = 1
+background_color = Color(0.141176, 0.141176, 0.141176, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qlc22")
+
+[node name="terrain" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.845, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="terrain"]
+light_energy = 5.363
+omni_range = 600.916
+
+[node name="walls" type="CSGBox3D" parent="terrain"]
+use_collision = true
+size = Vector3(50, 50, 50)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="terrain/walls"]
+operation = 2
+size = Vector3(45, 45, 45)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28227, -22, 14.777)
+use_collision = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.34912, -22, 10.4546)
+use_collision = true
+size = Vector3(5, 5, 5)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4605, -22, 1.70916)
+use_collision = true
+size = Vector3(10, 10, 10)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="terrain"]
+transform = Transform3D(-0.0160564, 0.258786, 0.965801, 0, 0.965926, -0.258819, -0.999871, -0.00415569, -0.0155093, 2.6927, -21.7751, 9.58931)
+use_collision = true
+size = Vector3(3, 2, 10)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="terrain"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, -15.4202, -20.9342, 10.488)
+use_collision = true
+size = Vector3(3, 2, 10)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="terrain"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, -6.35416, -19.8158, -3.23678)
+use_collision = true
+size = Vector3(3, 2, 10)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="terrain"]
+transform = Transform3D(1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, -0.99167, -19.5364, -4.45864)
+use_collision = true
+size = Vector3(3, 2, 10)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="terrain"]
+transform = Transform3D(-4.37114e-08, 0.965926, 0.258819, 0, 0.258819, -0.965926, -1, -4.2222e-08, -1.13133e-08, 6.25188, -19.7591, -7.98768)
+use_collision = true
+size = Vector3(3, 2, 10)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50983, -22, -13.2622)
+use_collision = true
+size = Vector3(15, 15, 15)
+
+[node name="spider_bot_model" parent="." instance=ExtResource("1_rlcnb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00784802, 0.224704, 0.169022)
